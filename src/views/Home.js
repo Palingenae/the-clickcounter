@@ -6,7 +6,7 @@ function Home({
 }) {
   return (
     <div>
-      <button>
+      <button onClick={onIncrement}>
         Vous avez cliqué {counter} fois
       </button>
     </div>
