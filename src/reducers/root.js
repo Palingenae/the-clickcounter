@@ -4,7 +4,7 @@
 
 import { combineReducers } from 'redux';
 // import languageProviderReducer from './containers/LanguageProvider/reducer';
-import globalReducer from './containers/HomeContainer/reducer';
+import globalReducer from './clickCounter';
 
 /**
  * Merges the main reducer with the router state and dynamically injected reducers

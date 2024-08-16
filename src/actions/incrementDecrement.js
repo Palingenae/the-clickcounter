@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT } from '../../utils/constants';
+import { INCREMENT, DECREMENT } from '../utils/constants';
 
 export function incrementAction() {
   return {
