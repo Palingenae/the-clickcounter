@@ -1,24 +1,25 @@
+// This can surely be improved
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { createStructuredSelector } from 'reselect';
-import { createSelector } from 'reselect';
+import { createStructuredSelector, createSelector } from 'reselect';
 
-import { initialState } from '../reducers/clickCounter';
 import Clicker from '../components/Clicker/Clicker';
+
+import reducer, { initialState } from '../reducers/clickCounter';
+
 import { incrementAction, decrementAction } from '../actions/incrementDecrement';
 import { useInjectReducer } from '../utils/injectReducer';
-
-import reducer from '../reducers/clickCounter';
 
 const key = 'clickCounter';
 
 const selectClickCounterDomain = state => state.clickCounter || initialState;
-
 const makeSelectClickCounter = () => createSelector(
-  selectClickCounterDomain, substate => substate.counter);
+  selectClickCounterDomain, substate => substate.counter
+);
 
-function ClickCounter(props) {
+function injectClickerProps(props) {
   useInjectReducer({ key, reducer });
 
   return (<Clicker {...props} />);
@@ -43,5 +44,5 @@ const withConnect = connect(
 
 export default compose(
   withConnect,
-)(ClickCounter);
+)(injectClickerProps);
 
