@@ -7,11 +7,12 @@ function Home({
 }) {
   return (
     <div>
+      <p>{counter}</p>
       <button onClick={onIncrement}>
-        Vous avez cliqué {counter} fois
+        Ajouter
       </button>
       <button onClick={onDecrement}>
-        Vous avez cliqué {counter} fois
+        Retirer
       </button>
     </div>
   );
