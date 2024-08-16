@@ -1,10 +1,10 @@
-import { INCREMENT, DECREMENT } from './constant';
+import { INCREMENT, DECREMENT } from '../utils/constants';
 
 export const initialState = {
   counter: 0,
 };
 
-export default function homeContainerReducer(state = initialState, action) {
+export default function clickCounterReducer(state = initialState, action) {
   switch (action.type) {
     case INCREMENT:
       return {

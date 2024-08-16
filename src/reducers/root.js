@@ -3,8 +3,7 @@
  */
 
 import { combineReducers } from 'redux';
-// import languageProviderReducer from './containers/LanguageProvider/reducer';
-import globalReducer from './containers/HomeContainer/reducer';
+import counterReducer from './clickCounter';
 
 /**
  * Merges the main reducer with the router state and dynamically injected reducers
@@ -12,7 +11,7 @@ import globalReducer from './containers/HomeContainer/reducer';
 export default function createReducer(injectedReducers = {}) {
   const rootReducer = combineReducers({
     // language: languageProviderReducer,
-    global: globalReducer,
+    counter: counterReducer,
     ...injectedReducers,
   });
 

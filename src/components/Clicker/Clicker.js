@@ -1,20 +1,21 @@
 import React from 'react';
 
-function Home({
+function Clicker({
   onIncrement,
   onDecrement,
   counter,
 }) {
   return (
     <div>
+      <p>{counter}</p>
       <button onClick={onIncrement}>
-        Vous avez cliqué {counter} fois
+        Ajouter
       </button>
       <button onClick={onDecrement}>
-        Vous avez cliqué {counter} fois
+        Retirer
       </button>
     </div>
   );
 };
 
-export default Home;
+export default Clicker;
