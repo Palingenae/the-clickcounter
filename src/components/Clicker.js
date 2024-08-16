@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Home({
+function Clicker({
   onIncrement,
   onDecrement,
   counter,
@@ -18,4 +18,4 @@ function Home({
   );
 };
 
-export default Home;
+export default Clicker;
