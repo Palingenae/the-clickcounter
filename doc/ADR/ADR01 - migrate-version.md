@@ -1,5 +1,5 @@
 # ADR issue [#1](https://github.com/Palingenae/eonix-clickcounter/issues/1) : migration de l'application
-> [!NOTE] Note personnelle
+> [!NOTE]
 > J'ai pleinement conscience que la mise à jour de ce type de test n'est pas toujours une priorité, mais cela me permet de montrer un peu plus mes méthodes de travail en tant que développeuse. C'est avec une bonne intention que j'écris cette ADR.
 
 ## Contexte
