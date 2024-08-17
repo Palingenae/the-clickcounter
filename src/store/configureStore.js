@@ -4,7 +4,8 @@
 
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { routerMiddleware } from 'connected-react-router';
+// import { routerMiddleware } from 'connected-react-router';
+import { createRouterMiddleware } from '@lagunovsky/redux-react-router';
 import createReducer from '../reducers/root';
 
 export default function configureStore(initialState = {}, history) {
@@ -13,7 +14,7 @@ export default function configureStore(initialState = {}, history) {
   const sagaMiddleware = createSagaMiddleware(reduxSagaMonitorOptions);
 
   // In case you want to inject more middleware
-  const middlewares = [sagaMiddleware, routerMiddleware(history)];
+  const middlewares = [sagaMiddleware, createRouterMiddleware(history)];
 
   const enhancers = [applyMiddleware(...middlewares)];
 

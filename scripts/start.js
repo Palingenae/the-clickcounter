@@ -6,27 +6,29 @@ process.env.NODE_ENV = 'development';
 // if this file is missing. dotenv will never modify any environment variables
 // that have already been set.
 // https://github.com/motdotla/dotenv
-require('dotenv').config({silent: true});
+import dotenv from 'dotenv';
 
-var chalk = require('chalk');
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var historyApiFallback = require('connect-history-api-fallback');
-var httpProxyMiddleware = require('http-proxy-middleware');
-var detect = require('detect-port');
-var clearConsole = require('react-dev-utils/clearConsole');
-var checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
-var formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
-var getProcessForPort = require('react-dev-utils/getProcessForPort');
-var openBrowser = require('react-dev-utils/openBrowser');
-var prompt = require('react-dev-utils/prompt');
-var fs = require('fs');
-var config = require('../config/webpack.config.dev');
-var paths = require('../config/paths');
+dotenv.config({ silent: true });
 
-var useYarn = fs.existsSync(paths.yarnLockFile);
-var cli = useYarn ? 'yarn' : 'npm';
-var isInteractive = process.stdout.isTTY;
+import chalk from 'chalk';
+import webpack from 'webpack';
+import WebpackDevServer from 'webpack-dev-server';
+import historyApiFallback from 'connect-history-api-fallback';
+import httpProxyMiddleware from 'http-proxy-middleware';
+import detect from 'detect-port';
+import clearConsole from 'react-dev-utils/clearConsole.js';
+import checkRequiredFiles from 'react-dev-utils/checkRequiredFiles.js';
+import formatWebpackMessages from 'react-dev-utils/formatWebpackMessages.js';
+import getProcessForPort from 'react-dev-utils/getProcessForPort.js';
+import openBrowser from 'react-dev-utils/openBrowser.js';
+// import prompt from 'react-dev-utils/prompt';
+import fs from 'fs';
+import config from '../config/webpack.config.dev.js';
+import paths from '../config/paths.js';
+
+const useYarn = fs.existsSync(paths.yarnLockFile);
+const cli = useYarn ? 'yarn' : 'npm';
+const isInteractive = process.stdout.isTTY;
 
 // Warn and crash if required files are missing
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
@@ -79,7 +81,7 @@ function setupCompiler(host, port, protocol) {
     // We have switched off the default Webpack output in WebpackDevServer
     // options so we are going to "massage" the warnings and errors and present
     // them in a readable focused way.
-    var messages = formatWebpackMessages(stats.toJson({}, true));
+    var messages = formatWebpackMessages(stats.toJson({}, true,));
     var isSuccessful = !messages.errors.length && !messages.warnings.length;
     var showInstructions = isSuccessful && (isInteractive || isFirstCompile);
 
@@ -297,20 +299,20 @@ detect(DEFAULT_PORT).then(port => {
     return;
   }
 
-  if (isInteractive) {
-    clearConsole();
-    var existingProcess = getProcessForPort(DEFAULT_PORT);
-    var question =
-      chalk.yellow('Something is already running on port ' + DEFAULT_PORT + '.' +
-        ((existingProcess) ? ' Probably:\n  ' + existingProcess : '')) +
-        '\n\nWould you like to run the app on another port instead?';
+  // if (isInteractive) {
+  //   clearConsole();
+  //   var existingProcess = getProcessForPort(DEFAULT_PORT);
+  //   var question =
+  //     chalk.yellow('Something is already running on port ' + DEFAULT_PORT + '.' +
+  //       ((existingProcess) ? ' Probably:\n  ' + existingProcess : '')) +
+  //       '\n\nWould you like to run the app on another port instead?';
 
-    prompt(question, true).then(shouldChangePort => {
-      if (shouldChangePort) {
-        run(port);
-      }
-    });
-  } else {
-    console.log(chalk.red('Something is already running on port ' + DEFAULT_PORT + '.'));
-  }
+  //   prompt(question, true).then(shouldChangePort => {
+  //     if (shouldChangePort) {
+  //       run(port);
+  //     }
+  //   });
+  // } else {
+  //   console.log(chalk.red('Something is already running on port ' + DEFAULT_PORT + '.'));
+  // }
 });
