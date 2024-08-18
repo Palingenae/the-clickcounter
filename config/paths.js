@@ -1,8 +1,8 @@
 'use strict';
 
-var path = require('path');
-var fs = require('fs');
-var url = require('url');
+import path from 'path';
+import fs from 'fs';
+import url from 'url';
 
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebookincubator/create-react-app/issues/637
@@ -46,7 +46,7 @@ function ensureSlash(path, needsSlash) {
 }
 
 function getPublicUrl(appPackageJson) {
-  return envPublicUrl || require(appPackageJson).homepage;
+  return envPublicUrl || appPackageJson.homepage;
 }
 
 // We use `PUBLIC_URL` environment variable or "homepage" field to infer
@@ -64,7 +64,7 @@ function getServedPath(appPackageJson) {
 }
 
 // config after eject: we're in ./config/
-module.exports = {
+const pathsConfig = {
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
@@ -78,3 +78,5 @@ module.exports = {
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json'))
 };
+
+export default pathsConfig;
