@@ -1,17 +1,19 @@
 # ADR issue [#1](https://github.com/Palingenae/eonix-clickcounter/issues/1) : Remplacement de Webpack par Vite
 
+> [!NOTE]
+> **Cette décision est structurante**. En mon sens, c'est le type de décision à prendre après concertation avec l'équipe de son projet après avalisation des personnes en charge et potentiellement du client de celui-ci. J'aurais tendance à procéder à ce changement de façon progressive.
+
 ## Contexte
-L'application Click Counter a été récupérée dans une ancienne version, tel que stipulé dans l'[ADR de migration de version](./ADR01%20-%20migrate-version.md). Celle-ci comportait Webpack en version 1, qui est en fait très lourd et comportait énormément de configuration, bien que cela puisse être un avantage, notamment dans les applications plus conséquentes.
+L'application Click Counter a été récupérée dans une ancienne version, tel que stipulé dans l'[ADR de migration de version](./ADR01%20-%20migrate-version.md). Celle-ci comportait Webpack en version 1, qui est en fait très lourd et comportait énormément de configuration, bien que cela puisse être un avantage, notamment dans les applications plus conséquentes avec des besoins spécifiques.
 
 ## Décision
 Au regard du nombre de changements d'API entre la v1 de Webpack à sa v5, la migration de Webpack s'en retrouve laborieuse et très longue. Par conséquent, la décision d'utiliser Vite au lieu de Webpack est plus judicieuse.
 
-Dans le cas de cette application, Vite se révèle plus avantageux que Webpack[^1][^2] : 
+Dans le cas de cette petite application, Vite se révèle plus avantageux que Webpack[^1][^2] : 
 - Support natif de React ;
 - Configuration simplifiée ;
-- Utilisation des Modules EcmaScripts directement dans le navigateur ;
-- Temps de développement réduits ;
-- Compatibilité des Frameworks Javascript ;
+- Utilisation des Modules EcmaScript ce qui a pour conséquence des temps de développement réduits ;
+- Écrit avec la compatibilité des Frameworks Javascript en priorité ;
 - Builds de production plus "légers" ;
 - etc.
 
