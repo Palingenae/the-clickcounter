@@ -1,0 +1,35 @@
+:root {
+    --font-text: Manrope, system-ui, sans-serif;
+
+    --fs-step-0: clamp(0.833rem, 0.005vi + 0.832rem, 0.84rem);
+    --fs-step-1: clamp(1rem, 0.139vi + 0.965rem, 1.188rem);
+    --fs-step-2: clamp(1.2rem, 0.355vi + 1.111rem, 1.679rem);
+    --fs-step-3: clamp(1.44rem, 0.692vi + 1.267rem, 2.374rem);
+    --fs-step-4: clamp(1.728rem, 1.207vi + 1.426rem, 3.357rem);
+    --fs-step-5: clamp(2.074rem, 1.98vi + 1.579rem, 4.747rem);
+    --fs-step-6: clamp(2.488rem, 3.129vi + 1.706rem, 6.712rem);
+
+    --spacing-50: 0.5rem;
+    --spacing-100: 1rem;
+    --spacing-200: 2rem;
+    --spacing-400: 4rem;
+
+    --neutral-1000: #0D0D0D;
+    --neutral-900: #1E1F20;
+    --neutral-800: #3B3C3E;
+    --neutral-700: #434547;
+    --neutral-600: #4C5052;
+    --neutral-500: #5A5E60;
+    --neutral-400: #696E71;
+    --neutral-300: #84898C;
+    --neutral-200: #ADB1B3;
+    --neutral-100: #CFD1D2;
+    --neutral-50: #E6E7E7;
+    --neutral-0: #F5F6F6;
+
+    --color-emerald-950: #0D2115;
+    --color-emerald-900: #193B25;
+    --color-emerald-800: #1E472D;
+    --color-emerald-700: #235936; 
+    --color-emerald-600: #2B7041;
+}

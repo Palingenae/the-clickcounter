@@ -12,6 +12,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
+        <main className="main" role="main">
         <Router>
           <h1>Clic Counter </h1>
           <Routes>
@@ -19,6 +20,7 @@ class App extends Component {
             <Route element={() => (<h2>Page introuvable</h2>)} />
           </Routes>
         </Router>
+        </main>
       </Provider>
     )
   }
