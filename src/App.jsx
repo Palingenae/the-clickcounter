@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import configureStore from './store/configureStore';
+import createStore from './store/createStore';
 import history from './utils/history';
-import CountClickCompose from './store/storeCompose';
+import ComposedClicker from './components/Clicker/ClickerCompose';
 // Create redux store with history
 const initialState = {};
-const store = configureStore(initialState, history);
+const store = createStore(initialState, history);
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
         <Router>
           <h1>Clic Counter </h1>
           <Routes>
-            <Route exact path="/" element={<CountClickCompose />} />
+            <Route exact path="/" element={<ComposedClicker />} />
             <Route element={() => (<h2>Page introuvable</h2>)} />
           </Routes>
         </Router>
