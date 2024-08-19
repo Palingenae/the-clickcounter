@@ -9,4 +9,5 @@
     font-size: var(--fs-step-6);
     font-variation-settings: "wght" 300;
     font-weight: 300;
+    font-variant-numeric: tabular-nums;
 }
