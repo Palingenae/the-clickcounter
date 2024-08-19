@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector, createSelector } from 'reselect';
 
-import Clicker from '../components/Clicker/Clicker';
+import Clicker from './Clicker';
 
-import reducer, { initialState } from '../reducers/clickCounter';
+import reducer, { initialState } from '../../reducers/clickCounter';
 
-import { incrementAction, decrementAction } from '../actions/incrementDecrement';
-import { useInjectReducer } from '../utils/injectReducer';
+import { incrementAction, decrementAction } from '../../actions/incrementDecrement';
+import { useInjectReducer } from '../../utils/injectReducer';
 
 const key = 'clickCounter';
 
