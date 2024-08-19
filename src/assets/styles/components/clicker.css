@@ -1,0 +1,13 @@
+.clicker {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--spacing-200);
+}
+
+.clicker__amount {
+    font-size: var(--fs-step-6);
+    font-variation-settings: "wght" 300;
+    font-weight: 300;
+    font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Manrope;
+    font-style: normal;
+    src: url('../fonts/manrope/Manrope[wght].woff2');
+  }
+
+h1 {
+    font-size: var(--fs-step-3);
+    font-variation-settings: 'wght' 700;
+    margin-bottom: var(--spacing-100);
+}
