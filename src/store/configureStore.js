@@ -3,7 +3,6 @@
  */
 
 import { createStore, applyMiddleware, compose } from 'redux';
-import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import { createRouterMiddleware } from '@lagunovsky/redux-react-router';
 import createReducer from '../reducers/root';
