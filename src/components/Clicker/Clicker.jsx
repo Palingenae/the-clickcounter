@@ -7,12 +7,12 @@ function Clicker({
 }) {
   return (
     <div className="clicker">
-      <p className="clicker__amount">{counter}</p>
+      <p className="clicker__amount" data-info="clickerAmount">{counter}</p>
       <div className="buttons__container">
-        <button className="button" role="button" onClick={onIncrement}>
+        <button className="button" role="button" data-action="increment" onClick={onIncrement}>
           Ajouter
         </button>
-        <button className={counter > 0 ? `button` : `button --disabled`} role="button" onClick={onDecrement}>
+        <button className={counter > 0 ? `button` : `button --disabled`} role="button" data-action="decrement" onClick={onDecrement}>
           Retirer
         </button>
       </div>
