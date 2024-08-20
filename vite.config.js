@@ -10,6 +10,11 @@ export default defineConfig(() => {
         plugins: [
             react(),
             patchCssModules()
-        ]
+        ],
+        test: {
+            environment: 'jsdom',
+            globals: true,
+            setupFiles: '/tests/setup.js'
+        }
     }
 })
