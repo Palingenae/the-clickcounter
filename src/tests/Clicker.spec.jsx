@@ -19,10 +19,11 @@ describe('Clicker', () => {
         expect(screen.getByText('Ajouter')).toBeVisible;
         expect(container.querySelector(`button[data-action="increment"]`).toBeVisible)
     })
-    it('renders the decrement button', () => {
+    it('renders the decrement button in app\'s initial state', () => {
         const { container } = render(<App />);
 
         expect(screen.getByText('Retirer')).toBeVisible;
         expect(container.querySelector(`button[data-action="decrement"]`).toBeVisible)
+        expect(container.querySelector(`button.--disabled`).toBeVisible)
     })
 })
